@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include('config.php');
+include('waf.php');
 ?>
 
 <html>
@@ -26,6 +27,7 @@ if(!isset($_SESSION['shl'])){
 
 if(isset($_POST['user'])&&isset($_POST['pass'])){
 	$user = $_POST['user'];
+	//$user = waf_block_or($_POST['user']);
 	$pass = $_POST['pass'];
 	//$pass = md5($_POST['pass']);
 	$query = "SELECT * FROM login WHERE `user`='$user' AND `pass`='$pass'";
