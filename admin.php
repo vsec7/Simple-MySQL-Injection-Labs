@@ -1,27 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-
-// configuration ---------------------------------------------------------
-
-$h = "localhost"; 	//hostdb
-$u = "root"; 		//userdb
-$p = "";		//passdb
-$d = "auth";		//dbname
-$con = mysqli_connect($h,$u,$p,$d) or die("Mysql could not connect!");
-
-/* Database ---------------------------------------------------------------
-
-DROP DATABASE IF EXISTS auth;
-CREATE DATABASE auth CHARACTER SET `gbk`;
-CREATE TABLE IF NOT EXISTS login (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	user VARCHAR(20) NOT NULL,
-	pass VARCHAR(40) NOT NULL
-	);
-INSERT INTO login (id, user, pass)VALUES('1','admin','shl1337');
-
---------------------------------------------------------------------------*/
+include('config.php');
 ?>
 
 <html>
